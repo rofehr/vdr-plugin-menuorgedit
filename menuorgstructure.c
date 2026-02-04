@@ -58,13 +58,13 @@ const char *cMenuorgItem::TypeString(void) const
 
 int cMenuorgItem::Index(void) const
 {
-  cMenuorgItem *p = Prev;
+  //cMenuorgItem *p = Prev;
   int i = 0;
 
-  while (p) {
-        i++;
-        p = p->Prev;
-        }
+  //while (p) {
+  //      i++;
+  //      p = p->Prev;
+  //      }
   return i;
 }
 
