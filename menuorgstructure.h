@@ -41,7 +41,8 @@ public:
   void SetTitle(const char *Title) { title = Title ? Title : ""; }
   void SetExecute(const char *Exec) { execute = Exec ? Exec : ""; }
   void SetConfirmExec(bool Confirm) { confirmExec = Confirm; }
-  
+  int Index(void) const;
+
   // Submenu management
   bool HasSubItems(void) const { return subItems != NULL; }
   cList<cMenuorgItem> *SubItems(void);

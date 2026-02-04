@@ -56,6 +56,18 @@ const char *cMenuorgItem::TypeString(void) const
   }
 }
 
+int cMenuorgItem::Index(void) const
+{
+  cMenuorgItem *p = prev;
+  int i = 0;
+
+  while (p) {
+        i++;
+        p = p->prev;
+        }
+  return i;
+}
+
 cString cMenuorgItem::GetDisplayText(int Indent) const
 {
   char indent[100] = "";
