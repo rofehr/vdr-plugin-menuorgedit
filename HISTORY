@@ -1,0 +1,22 @@
+VDR Plugin 'menuorgedit' Revision History
+------------------------------------------
+
+2026-02-04: Version 0.1.0
+
+- Initial release
+- OSD-based editor for menuorg.xml
+- Support for all menuorg.xml element types:
+  * System menus
+  * Plugins
+  * Commands
+  * Submenus
+  * Separators
+- Menu item management:
+  * Add new items
+  * Edit existing items
+  * Delete items
+  * Reorder items (move up/down)
+- XML import/export functionality
+- Automatic backup creation before saving
+- German translation included
+- Comprehensive documentation

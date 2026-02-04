@@ -1,0 +1,111 @@
+# Translation file for menuorgedit plugin
+# German translations
+
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR menuorgedit 0.1.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2026-02-04 12:00+0000\n"
+"PO-Revision-Date: 2026-02-04 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Menu Editor"
+msgstr "Menü-Editor"
+
+msgid "Menu Organization Editor"
+msgstr "Menü-Organisation Editor"
+
+msgid "Edit Menu Item"
+msgstr "Menüeintrag bearbeiten"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "System Menu"
+msgstr "System-Menü"
+
+msgid "Plugin"
+msgstr "Plugin"
+
+msgid "Command"
+msgstr "Befehl"
+
+msgid "Submenu"
+msgstr "Untermenü"
+
+msgid "Separator"
+msgstr "Trenner"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Title (optional)"
+msgstr "Titel (optional)"
+
+msgid "Execute"
+msgstr "Ausführen"
+
+msgid "Confirm"
+msgstr "Bestätigen"
+
+msgid "Add"
+msgstr "Hinzufügen"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Move"
+msgstr "Verschieben"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "--- Empty Menu ---"
+msgstr "--- Leeres Menü ---"
+
+msgid "*** Unsaved changes ***"
+msgstr "*** Ungespeicherte Änderungen ***"
+
+msgid "Name is required"
+msgstr "Name ist erforderlich"
+
+msgid "No item selected"
+msgstr "Kein Eintrag ausgewählt"
+
+msgid "Delete this item?"
+msgstr "Diesen Eintrag löschen?"
+
+msgid "Item added"
+msgstr "Eintrag hinzugefügt"
+
+msgid "Item updated"
+msgstr "Eintrag aktualisiert"
+
+msgid "Item deleted"
+msgstr "Eintrag gelöscht"
+
+msgid "Cannot move up"
+msgstr "Kann nicht nach oben verschoben werden"
+
+msgid "Cannot move down"
+msgstr "Kann nicht nach unten verschoben werden"
+
+msgid "No changes to save"
+msgstr "Keine Änderungen zum Speichern"
+
+msgid "Menu configuration saved"
+msgstr "Menü-Konfiguration gespeichert"
+
+msgid "Failed to save configuration"
+msgstr "Fehler beim Speichern der Konfiguration"
+
+msgid "Discard unsaved changes?"
+msgstr "Ungespeicherte Änderungen verwerfen?"

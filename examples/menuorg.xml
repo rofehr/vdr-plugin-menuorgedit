@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Example menuorg.xml configuration -->
+<!-- This file demonstrates the structure that can be edited with menuorgedit plugin -->
+<menus>
+    <!-- Standard VDR system menus -->
+    <system name="Schedule"/>
+    <system name="Channels"/>
+    <system name="Timers"/>
+    <system name="Recordings"/>
+    
+    <separator/>
+    
+    <!-- Multimedia submenu with plugins -->
+    <menu name="Multimedia">
+        <plugin name="mp3" title="Music Player"/>
+        <plugin name="mplayer" title="Video Player"/>
+        <separator title="DVD"/>
+        <plugin name="dvd"/>
+        <plugin name="burn" title="DVD Burner"/>
+    </menu>
+    
+    <!-- EPG and Information submenu -->
+    <menu name="Information">
+        <plugin name="epgsearch" title="EPG Search"/>
+        <plugin name="epg2vdr"/>
+        <separator/>
+        <command name="System Info" 
+                 execute="/usr/bin/vdr-sysinfo.sh" 
+                 confirm="no"/>
+    </menu>
+    
+    <separator/>
+    
+    <!-- Remaining plugins appear here automatically if not listed above -->
+    
+    <!-- System utilities at the bottom -->
+    <separator title="System"/>
+    <system name="Setup"/>
+    <system name="Commands"/>
+    
+    <separator/>
+    
+    <!-- Custom commands -->
+    <command name="Disk Space" 
+             execute="/usr/bin/df -h | grep /video" 
+             confirm="no"/>
+    <command name="Restart VDR" 
+             execute="/usr/bin/systemctl restart vdr" 
+             confirm="yes"/>
+</menus>
