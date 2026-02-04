@@ -53,7 +53,7 @@ public:
   const char *TypeString(void) const;
   cString GetDisplayText(int Indent = 0) const;
   
-  int Index(void);
+  virtual int Index(void);
   
 };
 
