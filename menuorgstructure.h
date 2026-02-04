@@ -27,7 +27,7 @@ private:
   std::string execute;
   bool confirmExec;
   cList<cMenuorgItem> *subItems;
-  int Index(void) const;
+  int Index(void);
   
 public:
   cMenuorgItem(eMenuItemType Type, const char *Name);
