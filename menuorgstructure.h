@@ -27,7 +27,6 @@ private:
   std::string execute;
   bool confirmExec;
   cList<cMenuorgItem> *subItems;
-  int Index(void);
   
 public:
   cMenuorgItem(eMenuItemType Type, const char *Name);
@@ -72,6 +71,7 @@ public:
   void DeleteItem(cMenuorgItem *Item);
   bool MoveItemUp(cMenuorgItem *Item);
   bool MoveItemDown(cMenuorgItem *Item);
+    int Index(void);
   
   bool IsModified(void) const { return modified; }
   void SetModified(bool Modified = true) { modified = Modified; }
