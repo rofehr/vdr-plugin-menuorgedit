@@ -27,7 +27,6 @@ private:
   std::string execute;
   bool confirmExec;
   cList<cMenuorgItem> *subItems;
-  int Index(void);
   
 public:
   cMenuorgItem(eMenuItemType Type, const char *Name);
@@ -42,7 +41,7 @@ public:
   void SetTitle(const char *Title) { title = Title ? Title : ""; }
   void SetExecute(const char *Exec) { execute = Exec ? Exec : ""; }
   void SetConfirmExec(bool Confirm) { confirmExec = Confirm; }
-  int Index(void) const;
+  int Index(void);
 
   // Submenu management
   bool HasSubItems(void) const { return subItems != NULL; }
