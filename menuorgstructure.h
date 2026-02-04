@@ -52,18 +52,18 @@ public:
   // Helper methods
   const char *TypeString(void) const;
   cString GetDisplayText(int Indent = 0) const;
-  
-  virtual int Index(void);
+ 
   
 };
 
 // Complete menu structure
 class cMenuorgStructure {
 private:
-  cList<cMenuorgItem> rootItems;
-  bool modified;
   
 public:
+  cList<cMenuorgItem> rootItems;
+  bool modified;
+
   cMenuorgStructure(void);
   virtual ~cMenuorgStructure();
   
