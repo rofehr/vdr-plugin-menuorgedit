@@ -7,8 +7,8 @@
 
 #include "menuorgstructure.h"
 #include <string>
-#include <libxml2/parser.h>
-#include <libxml2/tree.h>
+#include <libxml/parser.h>
+#include <libxml/tree.h>
 
 class cMenuorgXmlParser {
 private:
