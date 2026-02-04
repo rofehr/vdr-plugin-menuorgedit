@@ -172,7 +172,7 @@ int cMenuorgStructure::GetItemIndex(cMenuorgItem *Item, cMenuorgItem *Parent)
   if (!list)
     return -1;
   
-  return list->Index(Item);
+  return list.Index(Item);
 }
 
 void cMenuorgStructure::BuildFlatList(cList<cMenuorgItem> *FlatList, cMenuorgItem *Parent)
