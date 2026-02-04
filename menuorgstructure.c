@@ -56,7 +56,7 @@ const char *cMenuorgItem::TypeString(void) const
   }
 }
 
-int cMenuorgItem::Index(void) 
+int cMenuorgItem::Index(void) const
 {
   //cMenuorgItem *p = Prev;
   int i = 0;
