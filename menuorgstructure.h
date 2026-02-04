@@ -42,8 +42,8 @@ public:
   void SetExecute(const char *Exec) { execute = Exec ? Exec : ""; }
   void SetConfirmExec(bool Confirm) { confirmExec = Confirm; }
   int Index(void) const;
-  cMenuorgItem *Prev(void) const { return prev; }
-  cMenuorgItem *Next(void) const { return next; }
+  cMenuorgItem *Prev(void) const { return (cMenuorgItem*) prev; }
+  cMenuorgItem *Next(void) const { return (cMenuorgItem*) next; }
 
   // Submenu management
   bool HasSubItems(void) const { return subItems != NULL; }
