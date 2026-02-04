@@ -13,7 +13,7 @@
 cMenuorgXmlParser::cMenuorgXmlParser(const char *ConfigDir)
 {
   configDir = ConfigDir ? ConfigDir : "/etc/vdr/plugins/menuorg";
-  xmlFilePath = configDir + "/menuorg.xml";
+  xmlFilePath = configDir + "/menu.xml";
 }
 
 cMenuorgXmlParser::~cMenuorgXmlParser()
