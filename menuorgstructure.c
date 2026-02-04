@@ -116,13 +116,24 @@ bool cMenuorgStructure::MoveItemUp(cMenuorgItem *Item)
   if (!Item)
     return false;
   
-  int index = rootItems.Index(Item);
-  if (index <= 0)
-    return false;
+  // Find the item and its predecessor
+  cMenuorgItem *prev = NULL;
+  for (cMenuorgItem *item = rootItems.First(); item; item = rootItems.Next(item)) {
+    if (item == Item) {
+      if (!prev)
+        return false; // Already at top
+      
+      // Remove item from list
+      rootItems.Del(Item);
+      // Insert before previous item
+      rootItems.Ins(Item, prev);
+      modified = true;
+      return true;
+    }
+    prev = item;
+  }
   
-  rootItems.Move(index, index - 1);
-  modified = true;
-  return true;
+  return false;
 }
 
 bool cMenuorgStructure::MoveItemDown(cMenuorgItem *Item)
@@ -130,11 +141,16 @@ bool cMenuorgStructure::MoveItemDown(cMenuorgItem *Item)
   if (!Item)
     return false;
   
-  int index = rootItems.Index(Item);
-  if (index < 0 || index >= rootItems.Count() - 1)
-    return false;
+  // Find the item's successor
+  cMenuorgItem *next = rootItems.Next(Item);
   
-  rootItems.Move(index, index + 1);
+  if (!next)
+    return false; // Already at bottom
+  
+  // Remove item from list
+  rootItems.Del(Item);
+  // Insert after next item
+  rootItems.Add(Item, next);
   modified = true;
   return true;
 }
@@ -160,7 +176,14 @@ int cMenuorgStructure::GetItemIndex(cMenuorgItem *Item, cMenuorgItem *Parent)
   if (!list)
     return -1;
   
-  return list->Index(Item);
+  int index = 0;
+  for (cMenuorgItem *item = list->First(); item; item = list->Next(item)) {
+    if (item == Item)
+      return index;
+    index++;
+  }
+  
+  return -1;
 }
 
 void cMenuorgStructure::BuildFlatList(cList<cMenuorgItem> *FlatList, cMenuorgItem *Parent)
