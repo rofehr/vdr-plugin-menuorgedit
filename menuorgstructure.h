@@ -52,6 +52,9 @@ public:
   // Helper methods
   const char *TypeString(void) const;
   cString GetDisplayText(int Indent = 0) const;
+  
+  int Index(void);
+  
 };
 
 // Complete menu structure
@@ -71,7 +74,6 @@ public:
   void DeleteItem(cMenuorgItem *Item);
   bool MoveItemUp(cMenuorgItem *Item);
   bool MoveItemDown(cMenuorgItem *Item);
-    int Index(void);
   
   bool IsModified(void) const { return modified; }
   void SetModified(bool Modified = true) { modified = Modified; }
