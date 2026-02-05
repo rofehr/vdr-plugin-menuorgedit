@@ -41,8 +41,7 @@ public:
   void SetTitle(const char *Title) { title = Title ? Title : ""; }
   void SetExecute(const char *Exec) { execute = Exec ? Exec : ""; }
   void SetConfirmExec(bool Confirm) { confirmExec = Confirm; }
-
-
+  
   // Submenu management
   bool HasSubItems(void) const { return subItems != NULL; }
   cList<cMenuorgItem> *SubItems(void);
@@ -52,18 +51,15 @@ public:
   // Helper methods
   const char *TypeString(void) const;
   cString GetDisplayText(int Indent = 0) const;
- 
-  
 };
 
 // Complete menu structure
 class cMenuorgStructure {
 private:
-  
-public:
   cList<cMenuorgItem> rootItems;
   bool modified;
-
+  
+public:
   cMenuorgStructure(void);
   virtual ~cMenuorgStructure();
   
