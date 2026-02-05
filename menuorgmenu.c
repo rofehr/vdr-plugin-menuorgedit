@@ -169,9 +169,12 @@ void cMenuorgEditor::BuildDisplayList(void)
   cList<cMenuorgItem> *rootItems = structure->RootItems();
   
   for (cMenuorgItem *item = rootItems->First(); item; item = rootItems->Next(item)) {
+	
+	int indent = 0;  
 	cString text = item->GetDisplayText(indent);
 	esyslog("menuorgedit: Add item: %s",text);
-    displayList.Add(item);
+    
+	displayList.Add(item);
     
     // Add subitems recursively (simplified - would need depth tracking)
     if (item->HasSubItems()) {
