@@ -73,6 +73,7 @@ cString cMenuorgItem::GetDisplayText(int Indent) const
     case mitMenu:    typeChar = "M"; break;
     default:         typeChar = "?"; break;
   }
+  esyslog("%s[%s] %s", indent, typeChar, Title());
   
   return cString::sprintf("%s[%s] %s", indent, typeChar, Title());
 }
