@@ -14,6 +14,7 @@ enum eMenuItemType {
   mitSystem,      // VDR system menu
   mitPlugin,      // Plugin entry
   mitCommand,     // External command
+  mitApps,        // External Apps
   mitMenu,        // Submenu
   mitSeparator    // Separator line
 };

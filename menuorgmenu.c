@@ -14,6 +14,7 @@ static const char *SystemMenuNames[] = {
   "Recordings",
   "Setup",
   "Commands",
+  "Apps"
   NULL
 };
 

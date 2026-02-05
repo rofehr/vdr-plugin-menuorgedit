@@ -175,6 +175,11 @@ xmlNode *cMenuorgXmlParser::CreateXmlNode(cMenuorgItem *item, xmlDoc *doc)
       node = xmlNewNode(NULL, (const xmlChar *)"system");
       xmlNewProp(node, (const xmlChar *)"name", (const xmlChar *)item->Name());
       break;
+
+    case mitApps:
+      node = xmlNewNode(NULL, (const xmlChar *)"apps");
+      xmlNewProp(node, (const xmlChar *)"name", (const xmlChar *)item->Name());
+      break;
       
     case mitPlugin:
       node = xmlNewNode(NULL, (const xmlChar *)"plugin");

@@ -49,6 +49,7 @@ const char *cMenuorgItem::TypeString(void) const
   switch (type) {
     case mitSystem:    return "System";
     case mitPlugin:    return "Plugin";
+    case mitApps:      return "Apps";
     case mitCommand:   return "Command";
     case mitMenu:      return "Menu";
     case mitSeparator: return "Separator";
@@ -69,6 +70,7 @@ cString cMenuorgItem::GetDisplayText(int Indent) const
   switch (type) {
     case mitSystem:  typeChar = "S"; break;
     case mitPlugin:  typeChar = "P"; break;
+    case mitApps:    typeChar = "A"; break;
     case mitCommand: typeChar = "C"; break;
     case mitMenu:    typeChar = "M"; break;
     default:         typeChar = "?"; break;
