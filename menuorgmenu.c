@@ -151,8 +151,9 @@ cMenuorgEditor::cMenuorgEditor(cMenuorgStructure *Structure, cMenuorgXmlParser *
   selectedItem = NULL;
   
   SetHelp(tr("Add"), tr("Edit"), tr("Move"), tr("Delete"));
-  
+  esyslog("menuorgedit: BuildDisplayList()");
   BuildDisplayList();
+  esyslog("menuorgedit: UpdateMenu()");  
   UpdateMenu();
 }
 
@@ -168,6 +169,8 @@ void cMenuorgEditor::BuildDisplayList(void)
   cList<cMenuorgItem> *rootItems = structure->RootItems();
   
   for (cMenuorgItem *item = rootItems->First(); item; item = rootItems->Next(item)) {
+	cString text = item->GetDisplayText(indent);
+	esyslog("menuorgedit: Add item: %s",text);
     displayList.Add(item);
     
     // Add subitems recursively (simplified - would need depth tracking)
