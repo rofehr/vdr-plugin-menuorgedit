@@ -29,7 +29,7 @@ cPluginMenuorgedit::~cPluginMenuorgedit()
 
 const char *cPluginMenuorgedit::CommandLineHelp(void)
 {
-  return "  -c DIR,   --config=DIR   use DIR as config directory (default: /etc/vdr/plugins/menuorg)\n";
+  return "  -c DIR,   --config=DIR   use DIR as config directory (default: /etc/vdr)\n";
 }
 
 bool cPluginMenuorgedit::ProcessArgs(int argc, char *argv[])
@@ -56,7 +56,7 @@ bool cPluginMenuorgedit::Initialize(void)
 {
   // Initialize plugin - called after command line parsing
   if (!configDirectory)
-    configDirectory = strdup("/etc/vdr/plugins/menuorg");
+    configDirectory = strdup("/etc/vdr");
 
   menuStructure = new cMenuorgStructure();
   xmlParser = new cMenuorgXmlParser(configDirectory);
