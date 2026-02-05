@@ -78,6 +78,13 @@ bool cMenuorgXmlParser::ParseNode(xmlNode *node, cMenuorgItem *parent, cMenuorgS
         item = new cMenuorgItem(mitSystem, name);
       }
     }
+    else if (strcmp(nodeName, "apps") == 0) {
+      const char *name = GetNodeAttr(cur, "name");
+      if (name) {
+		esyslog("menuorgedit: Node(Apps) %s", name);
+        item = new cMenuorgItem(mitSystem, name);
+      }
+    }
     else if (strcmp(nodeName, "plugin") == 0) {
       const char *name = GetNodeAttr(cur, "name");
       if (name) {
