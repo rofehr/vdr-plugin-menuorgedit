@@ -63,7 +63,7 @@ const char *cMenuorgXmlParser::GetNodeAttr(xmlNode *node, const char *attrName)
 
 bool cMenuorgXmlParser::ParseNode(xmlNode *node, cMenuorgItem *parent, cMenuorgStructure *structure)
 {
-  esyslog("menuorgedit: ParseNode")
+  esyslog("menuorgedit: ParseNode");
   for (xmlNode *cur = node; cur; cur = cur->next) {
     if (cur->type != XML_ELEMENT_NODE)
       continue;
