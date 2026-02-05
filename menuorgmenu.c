@@ -191,7 +191,7 @@ void cMenuorgEditor::UpdateMenu(void)
     int indent = 0;
     for (cMenuorgItem *item = displayList.First(); item; item = displayList.Next(item)) {
       cString text = item->GetDisplayText(indent);
-	  esyslog("menuorgedit: item: %s",text.c_str());
+	  esyslog("menuorgedit: item: %s",text);
       Add(new cOsdItem(*text));
     }
   }
