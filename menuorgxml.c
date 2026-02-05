@@ -12,8 +12,8 @@
 
 cMenuorgXmlParser::cMenuorgXmlParser(const char *ConfigDir)
 {
-  configDir = ConfigDir ? ConfigDir : "/etc/vdr/plugins/menuorg";
-  xmlFilePath = configDir + "/menuorg.xml";
+  configDir = ConfigDir ? ConfigDir : "/etc/vdr/";
+  xmlFilePath = configDir + "/menu.xml";
 }
 
 cMenuorgXmlParser::~cMenuorgXmlParser()
@@ -36,7 +36,7 @@ bool cMenuorgXmlParser::CreateBackup(void)
   snprintf(cmd, sizeof(cmd), "cp \"%s\" \"%s\"", xmlFilePath.c_str(), backupPath.c_str());
   
   if (system(cmd) != 0) {
-    esyslog("menuorgedit: Failed to create backup of menuorg.xml");
+    esyslog("menuorgedit: Failed to create backup of menu.xml");
     return false;
   }
   
@@ -129,7 +129,7 @@ bool cMenuorgXmlParser::LoadXml(cMenuorgStructure *structure)
     return false;
   
   if (!FileExists()) {
-    isyslog("menuorgedit: menuorg.xml not found at %s", xmlFilePath.c_str());
+    isyslog("menuorgedit: menu.xml not found at %s", xmlFilePath.c_str());
     return false;
   }
   
@@ -143,7 +143,7 @@ bool cMenuorgXmlParser::LoadXml(cMenuorgStructure *structure)
   
   xmlNode *root = xmlDocGetRootElement(doc);
   if (!root || strcmp((const char *)root->name, "menus") != 0) {
-    esyslog("menuorgedit: Invalid root element in menuorg.xml");
+    esyslog("menuorgedit: Invalid root element in menu.xml");
     xmlFreeDoc(doc);
     return false;
   }
@@ -156,7 +156,7 @@ bool cMenuorgXmlParser::LoadXml(cMenuorgStructure *structure)
   xmlCleanupParser();
   
   structure->SetModified(false);
-  isyslog("menuorgedit: Loaded menuorg.xml from %s", xmlFilePath.c_str());
+  isyslog("menuorgedit: Loaded menu.xml from %s", xmlFilePath.c_str());
   
   return result;
 }
@@ -255,12 +255,12 @@ bool cMenuorgXmlParser::SaveXml(cMenuorgStructure *structure)
   xmlCleanupParser();
   
   if (result < 0) {
-    esyslog("menuorgedit: Failed to save menuorg.xml to %s", xmlFilePath.c_str());
+    esyslog("menuorgedit: Failed to save menu.xml to %s", xmlFilePath.c_str());
     return false;
   }
   
   structure->SetModified(false);
-  isyslog("menuorgedit: Saved menuorg.xml to %s", xmlFilePath.c_str());
+  isyslog("menuorgedit: Saved menu.xml to %s", xmlFilePath.c_str());
   
   return true;
 }
