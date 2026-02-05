@@ -74,7 +74,7 @@ bool cMenuorgXmlParser::ParseNode(xmlNode *node, cMenuorgItem *parent, cMenuorgS
     if (strcmp(nodeName, "system") == 0) {
       const char *name = GetNodeAttr(cur, "name");
       if (name) {
-		esyslog("menuorgedit: Node(System) %s", name.c_str());
+		esyslog("menuorgedit: Node(System) %s", name);
         item = new cMenuorgItem(mitSystem, name);
       }
     }
