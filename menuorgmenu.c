@@ -167,8 +167,8 @@ void cMenuorgEditor::BuildDisplayList(void)
   displayList.Clear();
   
   // Build flattened list with proper indentation
-  esyslog("menuorgedit: cList<cMenuorgItem> *rootItems = structure->RootItems()");	
   cList<cMenuorgItem> *rootItems = structure->RootItems();
+  esyslog("menuorgedit: cList<cMenuorgItem> *rootItems = structure->RootItems()");	
   
   for (cMenuorgItem *item = rootItems->First(); item; item = rootItems->Next(item)) {
 	
